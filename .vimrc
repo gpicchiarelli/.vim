@@ -1,6 +1,8 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
+set number
+
 colorscheme github
 
 set rtp+=~/.vim/bundle/vundle/
