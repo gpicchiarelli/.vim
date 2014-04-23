@@ -114,6 +114,8 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
+
+
 """"""""""""""""""""""""""""""
 
 set rtp+=~/.vim/bundle/vundle/
