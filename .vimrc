@@ -5,14 +5,12 @@ set softtabstop=2
 set shiftwidth=4
 " Indent by 4 spaces when auto-indenting
 set tabstop=4
-
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 " Turn on syntax highlighting
 syntax on
 " For plugins to load correctly
 filetype plugin indent on
-
 " Security
 set modelines=0
 " Show line numbers
@@ -70,6 +68,28 @@ map <leader>l :set list!<CR> " Toggle tabs and EOL
 set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P
 set wildmenu
 set nobackup
+"Key map for buffers tabs
+nmap <leader>1 <Plug>BuffetSwitch(1)
+nmap <leader>2 <Plug>BuffetSwitch(2)
+nmap <leader>3 <Plug>BuffetSwitch(3)
+nmap <leader>4 <Plug>BuffetSwitch(4)
+nmap <leader>5 <Plug>BuffetSwitch(5)
+nmap <leader>6 <Plug>BuffetSwitch(6)
+nmap <leader>7 <Plug>BuffetSwitch(7)
+nmap <leader>8 <Plug>BuffetSwitch(8)
+nmap <leader>9 <Plug>BuffetSwitch(9)
+nmap <leader>0 <Plug>BuffetSwitch(10)
+"Explorer
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
+let g:netrw_banner = 0
 
 " Edit vimr configuration file
 nnoremap <Leader>ve :e $MYVIMRC<CR>
@@ -94,7 +114,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'Shougo/vimproc.vim', { 'do': 'make' }
   Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
   Plug 'junegunn/fzf'
-  Plug 'itchyny/lightline'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'mattn/emmet-vim'
   Plug 'w0rp/ale'
@@ -107,4 +126,5 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'tpope/vim-fugitive'
+  Plug 'bagrat/vim-buffet'
 call plug#end()
