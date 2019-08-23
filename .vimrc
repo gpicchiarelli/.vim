@@ -84,10 +84,27 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'tpope/vim-surround'
-Plug 'sbdchd/neoformat'
-Plug 'zchee/deoplete-jedi' 
-Plug 'albertorestifo/github.vim'
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+  Plug 'tpope/vim-surround'
+  Plug 'sbdchd/neoformat'
+  Plug 'zchee/deoplete-jedi' 
+  Plug 'albertorestifo/github.vim'
+  Plug 'junegunn/vim-github-dashboard'
+  Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+  Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+  Plug 'junegunn/fzf'
+  Plug 'itchyny/lightline'
+  Plug 'terryma/vim-multiple-cursors'
+  Plug 'mattn/emmet-vim'
+  Plug 'w0rp/ale'
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'tomtom/tcomment_vim'
+  Plug 'easymotion/vim-easymotion'
+  Plug 'dhruvasagar/vim-table-mode'
+  Plug 'janko-m/vim-test'
+  Plug 'WolfgangMehner/c-support'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'tpope/vim-fugitive'
 call plug#end()
