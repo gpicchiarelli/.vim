@@ -111,7 +111,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'albertorestifo/github.vim'
   Plug 'junegunn/vim-github-dashboard'
   Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-  Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
   Plug 'junegunn/fzf'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'mattn/emmet-vim'
@@ -127,4 +126,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'bagrat/vim-buffet'
   Plug 'Chiel92/vim-autoformat'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
