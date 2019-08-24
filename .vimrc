@@ -89,7 +89,6 @@ augroup ProjectDrawer
   autocmd!
   autocmd VimEnter * :Vexplore
 augroup END
-let g:netrw_banner = 0
 
 " Edit vimr configuration file
 nnoremap <Leader>ve :e $MYVIMRC<CR>
@@ -127,4 +126,5 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline-themes'
   Plug 'tpope/vim-fugitive'
   Plug 'bagrat/vim-buffet'
+  Plug 'Chiel92/vim-autoformat'
 call plug#end()
