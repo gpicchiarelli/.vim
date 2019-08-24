@@ -128,4 +128,5 @@ call plug#begin('~/.vim/plugged')
   Plug 'Chiel92/vim-autoformat'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'davidhalter/jedi-vim'
 call plug#end()
