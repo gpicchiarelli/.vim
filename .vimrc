@@ -123,4 +123,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
+  Plug 'Shougo/neoinclude.vim'
+  Plug 'Shougo/deoplete-clangx'
 call plug#end()
