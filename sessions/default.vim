@@ -196,19 +196,19 @@ nmap ySs <Plug>YSsurround
 nmap yss <Plug>Yssurround
 nmap yS <Plug>YSurround
 nmap ys <Plug>Ysurround
-nnoremap <silent> <Plug>(coc-template-here) :call coc#rpc#notify('doKeymap', ['template-here'])
-nnoremap <silent> <Plug>(coc-template-bottom) :call coc#rpc#notify('doKeymap', ['template-bottom'])
-nnoremap <silent> <Plug>(coc-template-top) :call coc#rpc#notify('doKeymap', ['template-top'])
 nnoremap <silent> <Plug>(coc-bookmark-prev) :call coc#rpc#notify('doKeymap', ['bookmark-prev'])
 nnoremap <silent> <Plug>(coc-bookmark-next) :call coc#rpc#notify('doKeymap', ['bookmark-next'])
 nnoremap <silent> <Plug>(coc-bookmark-annotate) :call coc#rpc#notify('doKeymap', ['bookmark-annotate'])
 nnoremap <silent> <Plug>(coc-bookmark-toggle) :call coc#rpc#notify('doKeymap', ['bookmark-toggle'])
-vnoremap <silent> <Plug>(coc-snippets-select) :call coc#rpc#notify('doKeymap', ['snippets-select'])
 nnoremap <silent> <Plug>(coc-git-commit) :call coc#rpc#notify('doKeymap', ['git-commit'])
 nnoremap <silent> <Plug>(coc-git-chunkinfo) :call coc#rpc#notify('doKeymap', ['git-chunkinfo'])
 nnoremap <silent> <Plug>(coc-git-prevchunk) :call coc#rpc#notify('doKeymap', ['git-prevchunk'])
 nnoremap <silent> <Plug>(coc-git-nextchunk) :call coc#rpc#notify('doKeymap', ['git-nextchunk'])
-nnoremap <SNR>96_: :=v:count ? v:count : ''
+nnoremap <silent> <Plug>(coc-template-here) :call coc#rpc#notify('doKeymap', ['template-here'])
+nnoremap <silent> <Plug>(coc-template-bottom) :call coc#rpc#notify('doKeymap', ['template-bottom'])
+nnoremap <silent> <Plug>(coc-template-top) :call coc#rpc#notify('doKeymap', ['template-top'])
+vnoremap <silent> <Plug>(coc-snippets-select) :call coc#rpc#notify('doKeymap', ['snippets-select'])
+nnoremap <SNR>97_: :=v:count ? v:count : ''
 vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(expand((exists("g:netrw_gx")? g:netrw_gx : '<cfile>')),netrw#CheckIfRemote())
 onoremap <silent> <Plug>(coc-funcobj-a) :call coc#rpc#request('selectFunction', [v:false, ''])
@@ -784,6 +784,7 @@ snoremap <silent> <BS> c
 snoremap <silent> <C-Tab> :call UltiSnips#ListSnippets()
 vnoremap <F1> :set invfullscreen
 nnoremap <F1> :set invfullscreen
+inoremap  
 imap S <Plug>ISurround
 imap s <Plug>Isurround
 inoremap <silent> 	 =UltiSnips#ExpandSnippet()
@@ -826,6 +827,7 @@ nnoremap <silent> î :call multiple_cursors#select_all("n", 1)
 let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=indent,eol,start
+set completeopt=menuone,longest,preview
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,latin1
 set formatoptions=tcqrn1
@@ -867,10 +869,12 @@ set runtimepath+=~/.vim/plugged/vim-buffet/
 set runtimepath+=~/.vim/plugged/vim-autoformat/
 set runtimepath+=~/.vim/plugged/coc.nvim/
 set runtimepath+=~/.vim/plugged/coc-tsserver/
+set runtimepath+=~/.vim/plugged/jedi-vim/
 set runtimepath+=/usr/local/share/vim/vimfiles
 set runtimepath+=/usr/local/share/vim/vim81
 set runtimepath+=/usr/local/share/vim/vimfiles/after
 set runtimepath+=~/.vim/plugged/ultisnips/after
+set runtimepath+=~/.vim/plugged/jedi-vim/after
 set runtimepath+=~/.vim/after
 set scrolloff=3
 set shiftwidth=2
@@ -889,15 +893,15 @@ let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/.vim
+cd ~/
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 argglobal
 %argdel
-$argadd .vimrc
-edit .vimrc
+$argadd .vim/.vimrc
+edit .vim/.vimrc
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -993,7 +997,7 @@ setlocal nrformats=bin,octal,hex
 set number
 setlocal number
 setlocal numberwidth=4
-setlocal omnifunc=syntaxcomplete#Complete
+setlocal omnifunc=
 setlocal path=
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -1038,15 +1042,15 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 13 - ((12 * winheight(0) + 26) / 53)
+let s:l = 123 - ((49 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-13
-normal! 014|
+123
+normal! 015|
+lcd ~/.vim
 tabnext 1
-badd +1 .vimrc
-badd +0 .vimrc.swp
+badd +120 ~/.vim/.vimrc
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

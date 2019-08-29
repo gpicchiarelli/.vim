@@ -79,21 +79,14 @@ nmap <leader>7 <Plug>BuffetSwitch(7)
 nmap <leader>8 <Plug>BuffetSwitch(8)
 nmap <leader>9 <Plug>BuffetSwitch(9)
 nmap <leader>0 <Plug>BuffetSwitch(10)
-"Explorer
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 7
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
 
 " Edit vimr configuration file
 nnoremap <Leader>ve :e $MYVIMRC<CR>
 " " Reload vimr configuration file
 nnoremap <Leader>vw :source $MYVIMRC<CR>
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
 
 "Plugged management
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -126,7 +119,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'bagrat/vim-buffet'
   Plug 'Chiel92/vim-autoformat'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
   Plug 'davidhalter/jedi-vim'
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 call plug#end()
