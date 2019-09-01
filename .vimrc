@@ -106,6 +106,19 @@ let g:jedi#rename_command = "<leader>r"
 let g:jedi#popup_select_first = 0
 let g:jedi#use_tabs_not_buffers = 1
 
+augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType gn AutoFormatBuffer gn
+  autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType python AutoFormatBuffer yapf
+  " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+  autocmd FileType vue AutoFormatBuffer prettier
+augroup END
+
 "Plugged management
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -118,7 +131,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'honza/vim-snippets'
   Plug 'tpope/vim-surround'
   Plug 'sbdchd/neoformat'
-  Plug 'zchee/deoplete-jedi' 
+  Plug 'deoplete-plugins/deoplete-jedi' 
   Plug 'albertorestifo/github.vim'
   Plug 'junegunn/vim-github-dashboard'
   Plug 'Shougo/vimproc.vim', { 'do': 'make' }
@@ -145,4 +158,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'Shougo/deoplete-clangx'
   Plug 'scrooloose/nerdtree'
   Plug 'lervag/vimtex'
+  Plug 'google/vim-maktaba'
+  Plug 'google/vim-codefmt'
+  Plug 'google/vim-glaive'
 call plug#end()
