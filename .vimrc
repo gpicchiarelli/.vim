@@ -1,4 +1,4 @@
-set nocompatible
+seZ nocompatible
 " Use Vim settings, rather than Vi settings
 set softtabstop=2
 " Indent by 2 spaces when hitting tab
@@ -81,9 +81,9 @@ nmap <leader>9 <Plug>BuffetSwitch(9)
 nmap <leader>0 <Plug>BuffetSwitch(10)
 
 " Edit vimr configuration file
-nnoremap <Leader>ve :e $MYVIMRC<CR>
-" " Reload vimr configuration file
-nnoremap <Leader>vw :source $MYVIMRC<CR>
+nnoremap confe :e $MYVIMRC<CR>
+" Reload vims configuration file
+nnoremap confr :source $MYVIMRC<CR>
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
@@ -125,4 +125,5 @@ call plug#begin('~/.vim/plugged')
   Plug 'roxma/vim-hug-neovim-rpc'
   Plug 'Shougo/neoinclude.vim'
   Plug 'Shougo/deoplete-clangx'
+  Plug 'scrooloose/nerdtree'
 call plug#end()
