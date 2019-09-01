@@ -1,4 +1,4 @@
 **Dependencies**
 ------------------------------------
 
-pip3 install --user pynvim
+pip3 install --user pynvim autopep8
