@@ -119,6 +119,8 @@ augroup autoformat_settings
   autocmd FileType vue AutoFormatBuffer prettier
 augroup END
 
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
+
 "Plugged management
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -161,4 +163,5 @@ call plug#begin('~/.vim/plugged')
   Plug 'google/vim-maktaba'
   Plug 'google/vim-codefmt'
   Plug 'google/vim-glaive'
+  Plug 'tell-k/vim-autopep8'
 call plug#end()
