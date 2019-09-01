@@ -1,4 +1,4 @@
-seZ nocompatible
+set nocompatible
 " Use Vim settings, rather than Vi settings
 set softtabstop=2
 " Indent by 2 spaces when hitting tab
@@ -80,6 +80,12 @@ nmap <leader>8 <Plug>BuffetSwitch(8)
 nmap <leader>9 <Plug>BuffetSwitch(9)
 nmap <leader>0 <Plug>BuffetSwitch(10)
 
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
 " Edit vimr configuration file
 nnoremap confe :e $MYVIMRC<CR>
 " Reload vims configuration file
@@ -126,4 +132,5 @@ call plug#begin('~/.vim/plugged')
   Plug 'Shougo/neoinclude.vim'
   Plug 'Shougo/deoplete-clangx'
   Plug 'scrooloose/nerdtree'
+  Plug 'lervag/vimtex'
 call plug#end()
