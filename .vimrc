@@ -52,6 +52,9 @@ set ignorecase
 set smartcase
 set showmatch
 
+"reload vimrc file
+set autoread
+
 map <leader><space> :let @/=''<cr> " clear search
 " Remap help key.
 inoremap <F1> <ESC>:set invfullscreen<CR>a
@@ -85,11 +88,6 @@ let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
-
-augroup myvimrc
-    au!
-    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
-augroup END
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
@@ -166,4 +164,5 @@ call plug#begin('~/.vim/plugged')
   Plug 'google/vim-codefmt'
   Plug 'google/vim-glaive'
   Plug 'tell-k/vim-autopep8'
+ Plug 'gabrielelana/vim-markdown'
 call plug#end()
